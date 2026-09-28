@@ -1,12 +1,443 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>portfolio</title>
+
+    <title>Ankit Halder</title>
+    <meta name="description"
+          content="Cybersecurity portfolio of Ankit — Penetration Tester, Security Engineer and Red Team enthusiast.">
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h4>under construction</h4>
-    
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="logo">
+            <span>&lt;</span>AH<span>/&gt;</span>
+        </div>
+        <a href="#home" class="logo">
+            <img src="logo.png" alt="Cybersecurity Logo">
+        </a>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <p class="terminal-text">
+                <span>$</span> whoami
+            </p>
+
+            <h1>
+                Hi, I'm <span>Ankit</span>
+            </h1>
+
+            <h2>
+                Cybersecurity Engineer
+            </h2>
+
+            <p class="hero-description">
+                Penetration Tester • Security Engineer • Red Team Enthusiast
+            </p>
+
+            <p class="hero-about">
+                I build, break and secure digital systems.
+                Interested in penetration testing, application security,
+                incident response and offensive security.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#projects" class="btn primary">
+                    View Projects
+                </a>
+
+                <a href="#contact" class="btn secondary">
+                    Contact Me
+                </a>
+            </div>
+
+        </div>
+
+        <div class="terminal">
+
+            <div class="terminal-header">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+            </div>
+
+            <div class="terminal-body">
+                <p><span class="green">root@ankit</span>:~$ nmap -sV target</p>
+                <p>Scanning target...</p>
+                <p class="green">PORT 22   OPEN   SSH</p>
+                <p class="green">PORT 80   OPEN   HTTP</p>
+                <p class="green">PORT 443  OPEN   HTTPS</p>
+                <p><span class="green">root@ankit</span>:~$ ./secure_system.sh</p>
+                <p class="blue">Security assessment complete.</p>
+                <p><span class="green">root@ankit</span>:~$ _</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+    <section id="about" class="section">
+
+        <div class="section-title">
+            <span>01.</span>
+            <h2>About Me</h2>
+        </div>
+
+        <div class="about-grid">
+
+            <div>
+                <p>
+                    I'm Ankit, a cybersecurity enthusiast focused on
+                    penetration testing, application security and
+                    offensive security.
+                </p>
+
+                <p>
+                    I enjoy understanding how systems work, finding
+                    vulnerabilities and learning how they can be
+                    secured against real-world attacks.
+                </p>
+
+                <p>
+                    My long-term goal is to work as a Red Team /
+                    Security Engineer while continuously developing
+                    my offensive and defensive security skills.
+                </p>
+            </div>
+
+            <div class="about-card">
+                <div class="code-line">
+                    <span>const</span> profile = {
+                </div>
+
+                <div class="code-line indent">
+                    role: <span>"Security Engineer"</span>,
+                </div>
+
+                <div class="code-line indent">
+                    focus: <span>"Red Team"</span>,
+                </div>
+
+                <div class="code-line indent">
+                    interest: <span>"Pentesting"</span>,
+                </div>
+
+                <div class="code-line indent">
+                    learning: <span>"Always"</span>
+                </div>
+
+                <div class="code-line">
+                    };
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+
+        <div class="section-title">
+            <span>02.</span>
+            <h2>Skills</h2>
+        </div>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <div class="skill-icon">⚔</div>
+                <h3>Offensive Security</h3>
+                <p>
+                    Penetration Testing, Web Security,
+                    Vulnerability Assessment and Red Teaming.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">🛡</div>
+                <h3>Defensive Security</h3>
+                <p>
+                    SOC fundamentals, Incident Response,
+                    Network Security and Threat Detection.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">🌐</div>
+                <h3>Networking</h3>
+                <p>
+                    TCP/IP, OSI Model, DNS, DHCP, VLAN,
+                    Subnetting and Network Analysis.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">&lt;/&gt;</div>
+                <h3>Programming</h3>
+                <p>
+                    Java, Python, C/C++, Bash,
+                    HTML, CSS and basic JavaScript.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="tools">
+
+            <h3>Tools & Technologies</h3>
+
+            <div class="tool-list">
+                <span>Nmap</span>
+                <span>Burp Suite</span>
+                <span>Wireshark</span>
+                <span>Metasploit</span>
+                <span>Netcat</span>
+                <span>Hydra</span>
+                <span>Kali Linux</span>
+                <span>Linux</span>
+                <span>Git</span>
+                <span>MySQL</span>
+                <span>VirtualBox</span>
+                <span>VMware</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+
+        <div class="section-title">
+            <span>03.</span>
+            <h2>Projects</h2>
+        </div>
+
+        <div class="project-grid">
+
+            <article class="project-card">
+
+                <div class="project-top">
+                    <span class="folder">📁</span>
+
+                    <div>
+                        <a href="#" class="project-link">↗</a>
+                    </div>
+                </div>
+
+                <h3>Python IDS</h3>
+
+                <p>
+                    A Python-based Intrusion Detection System
+                    designed to monitor network activity and
+                    identify suspicious behavior.
+                </p>
+
+                <div class="project-tech">
+                    <span>Python</span>
+                    <span>Networking</span>
+                    <span>Security</span>
+                </div>
+
+            </article>
+
+
+            <article class="project-card">
+
+                <div class="project-top">
+                    <span class="folder">📁</span>
+
+                    <div>
+                        <a href="#" class="project-link">↗</a>
+                    </div>
+                </div>
+
+                <h3>Cybersecurity Home Lab</h3>
+
+                <p>
+                    A virtual penetration-testing environment
+                    containing Kali Linux, Metasploitable and
+                    vulnerable web applications.
+                </p>
+
+                <div class="project-tech">
+                    <span>Kali Linux</span>
+                    <span>VMware</span>
+                    <span>Nmap</span>
+                </div>
+
+            </article>
+
+
+            <article class="project-card">
+
+                <div class="project-top">
+                    <span class="folder">📁</span>
+
+                    <div>
+                        <a href="#" class="project-link">↗</a>
+                    </div>
+                </div>
+
+                <h3>DirectTalk</h3>
+
+                <p>
+                    Android-based UDP communication project
+                    exploring real-time network communication
+                    and voice transmission.
+                </p>
+
+                <div class="project-tech">
+                    <span>Java</span>
+                    <span>Android</span>
+                    <span>UDP</span>
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- Experience -->
+    <section id="experience" class="section">
+
+        <div class="section-title">
+            <span>04.</span>
+            <h2>Experience</h2>
+        </div>
+
+        <div class="experience-card">
+
+            <div class="experience-header">
+                <div>
+                    <h3>Cyber Security Intern</h3>
+                    <p>UP Police Cyber Security Internship Program</p>
+                </div>
+
+                <span class="date">2026</span>
+            </div>
+
+            <ul>
+                <li>Cyber Forensics</li>
+                <li>Cybercrime Investigation</li>
+                <li>Cyber Laws</li>
+                <li>Mobile Forensics</li>
+                <li>Malware Forensics</li>
+                <li>Dark Web Intelligence</li>
+                <li>Cyber Psychology</li>
+                <li>Hardware Hacking</li>
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <!-- Certifications -->
+    <section class="section">
+
+        <div class="section-title">
+            <span>05.</span>
+            <h2>Certifications & Learning</h2>
+        </div>
+
+        <div class="cert-grid">
+
+            <div class="cert-card">
+                <h3>Cybersecurity Training</h3>
+                <p>
+                    Security fundamentals, networking,
+                    penetration testing and ethical hacking.
+                </p>
+            </div>
+
+            <div class="cert-card">
+                <h3>Cyber Security Internship</h3>
+                <p>
+                    UP Police Cyber Security Internship
+                    Program — 2026.
+                </p>
+            </div>
+
+            <div class="cert-card">
+                <h3>Continuous Learning</h3>
+                <p>
+                    Currently developing skills in SOC,
+                    Red Teaming, AI and application security.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+
+        <p class="small-title">06. What's next?</p>
+
+        <h2>Let's Connect</h2>
+
+        <p>
+            Interested in cybersecurity, penetration testing,
+            security research or collaboration?
+        </p>
+
+        <a href="mailto:your.email@example.com" class="btn primary">
+            Say Hello
+        </a>
+
+        <div class="social-links">
+
+            <a href="#" target="github.com/Silentcoder">GitHub</a>
+            <a href="#" target="_blank">LinkedIn</a>
+            <a href="#" target="_blank">TryHackMe</a>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            Designed & Built by <span>Ankit</span>
+        </p>
+
+        <p class="footer-code">
+            &lt; Security • Code • Research /&gt;
+        </p>
+
+    </footer>
+
 </body>
 </html>
