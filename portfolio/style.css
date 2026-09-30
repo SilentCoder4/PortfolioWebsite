@@ -532,6 +532,7 @@ body {
     color: var(--muted);
     font-family: Arial, sans-serif;
 }
+
 /* =========================================
    MORE CERTIFICATIONS BUTTON
 ========================================= */
@@ -583,14 +584,14 @@ body {
 
     color: #ffffff;
 
-    border-color: #E63946;
+    border-color: #27c93f;
 
     background:
         rgba(230, 57, 70, 0.06);
 
     box-shadow:
         0 0 25px
-        rgba(230, 57, 70, 0.12);
+        rgba(57, 230, 86, 0.12);
 
     transform:
         translateY(-3px);
@@ -609,10 +610,10 @@ body {
     width: 25px;
     height: 25px;
 
-    color: #E63946;
+    color: #27c93f;
 
     border: 1px solid
-        rgba(230, 57, 70, 0.35);
+        rgba(61, 221, 98, 0.35);
 
     border-radius: 50%;
 
@@ -629,9 +630,9 @@ body {
 
     color: #ffffff;
 
-    background: #E63946;
+    background: #27c93f;
 
-    border-color: #E63946;
+    border-color: #27c93f;
 
     animation: none;
 
