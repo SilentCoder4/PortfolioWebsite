@@ -1,0 +1,920 @@
+   <style>
+
+        /* =========================================
+           GLOBAL
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+
+            background:
+                radial-gradient(
+                    circle at 10% 20%,
+                    rgba(230, 57, 70, 0.06),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 90% 80%,
+                    rgba(139, 92, 246, 0.06),
+                    transparent 30%
+                ),
+                #050507;
+
+            color: #e5e7eb;
+
+            font-family:
+                "Courier New",
+                monospace;
+
+            min-height: 100vh;
+
+            overflow-x: hidden;
+        }
+
+
+        /* =========================================
+           BACKGROUND GRID
+        ========================================= */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            background-image:
+                linear-gradient(
+                    rgba(255,255,255,0.018) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,0.018) 1px,
+                    transparent 1px
+                );
+
+            background-size: 40px 40px;
+
+            pointer-events: none;
+
+            z-index: -2;
+        }
+
+
+        /* =========================================
+           MAIN CONTAINER
+        ========================================= */
+
+        .container {
+
+            width: min(1200px, 90%);
+
+            margin: auto;
+
+            padding: 90px 0;
+        }
+
+
+        /* =========================================
+           TITLE
+        ========================================= */
+
+        .page-header {
+
+            text-align: center;
+
+            margin-bottom: 70px;
+
+            animation:
+                titleAppear 1s ease forwards;
+        }
+
+
+        .terminal-label {
+
+            color: #E63946;
+
+            font-size: 13px;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .page-header h1 {
+
+            font-family: Arial, sans-serif;
+
+            font-size:
+                clamp(38px, 6vw, 65px);
+
+            font-weight: 800;
+
+            letter-spacing: -2px;
+
+            color: #f1f5f9;
+        }
+
+
+        .page-header h1 span {
+
+            color: #E63946;
+
+            text-shadow:
+                0 0 20px
+                rgba(230, 57, 70, 0.25);
+        }
+
+
+        .page-header p {
+
+            max-width: 650px;
+
+            margin: 20px auto 0;
+
+            color: #7f8994;
+
+            font-family: Arial, sans-serif;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================================
+           CERTIFICATE CARD
+        ========================================= */
+
+        .certificate {
+
+            position: relative;
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(400px, 1fr)
+                minmax(350px, 1fr);
+
+            gap: 55px;
+
+            align-items: center;
+
+            padding: 28px;
+
+            margin-bottom: 55px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(14, 17, 22, 0.96),
+                    rgba(7, 9, 12, 0.96)
+                );
+
+            border:
+
+                1px solid
+                rgba(255,255,255,0.07);
+
+            border-radius: 12px;
+
+            overflow: hidden;
+
+            transition:
+                transform 0.4s ease,
+                border-color 0.4s ease,
+                box-shadow 0.4s ease;
+        }
+
+
+        /* =========================================
+           CARD GLOW
+        ========================================= */
+
+        .certificate::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            top: -170px;
+            right: -130px;
+
+            border-radius: 50%;
+
+            background: #8B5CF6;
+
+            opacity: 0.07;
+
+            filter: blur(80px);
+
+            pointer-events: none;
+        }
+
+
+        .certificate::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            bottom: -120px;
+            left: -80px;
+
+            border-radius: 50%;
+
+            background: #E63946;
+
+            opacity: 0.05;
+
+            filter: blur(70px);
+
+            pointer-events: none;
+        }
+
+
+        .certificate:hover {
+
+            transform: translateY(-8px);
+
+            border-color:
+                rgba(230, 57, 70, 0.55);
+
+            box-shadow:
+
+                0 25px 60px
+                rgba(0,0,0,0.55),
+
+                0 0 30px
+                rgba(230,57,70,0.08);
+        }
+
+
+        /* =========================================
+           LEFT / RIGHT ANIMATION
+        ========================================= */
+
+        .certificate:nth-child(2n) {
+
+            animation:
+                slideFromLeft 1s ease both;
+        }
+
+
+        .certificate:nth-child(2n+1) {
+
+            animation:
+                slideFromRight 1s ease both;
+        }
+
+
+        /* =========================================
+           CERTIFICATE IMAGE
+        ========================================= */
+
+        .certificate-preview {
+
+            position: relative;
+
+            width: 100%;
+
+            aspect-ratio: 16 / 11;
+
+            border-radius: 7px;
+
+            overflow: hidden;
+
+            background: #030405;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
+
+            box-shadow:
+                0 15px 35px
+                rgba(0,0,0,0.45);
+        }
+
+
+        .certificate-preview img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition:
+                transform 0.6s ease,
+                filter 0.6s ease;
+        }
+
+
+        .certificate:hover
+        .certificate-preview img {
+
+            transform: scale(1.035);
+
+            filter:
+                brightness(1.08);
+        }
+
+
+        /* =========================================
+           IMAGE SCAN LINE
+        ========================================= */
+
+        .certificate-preview::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 2px;
+
+            top: -5px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    #E63946,
+                    #8B5CF6,
+                    transparent
+                );
+
+            opacity: 0;
+
+            box-shadow:
+                0 0 12px #E63946;
+
+            transition: opacity 0.3s;
+        }
+
+
+        .certificate:hover
+        .certificate-preview::after {
+
+            opacity: 1;
+
+            animation:
+                scanLine 2.2s linear infinite;
+        }
+
+
+        /* =========================================
+           VIEW BUTTON
+        ========================================= */
+
+        .view-image {
+
+            position: absolute;
+
+            left: 50%;
+
+            bottom: 18px;
+
+            transform:
+                translate(-50%, 15px);
+
+            padding:
+                9px 16px;
+
+            color: #ffffff;
+
+            background:
+                rgba(5,5,7,0.9);
+
+            border:
+                1px solid #E63946;
+
+            border-radius: 4px;
+
+            text-decoration: none;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 12px;
+
+            opacity: 0;
+
+            transition: 0.3s ease;
+
+            backdrop-filter: blur(10px);
+
+            z-index: 2;
+        }
+
+
+        .certificate:hover
+        .view-image {
+
+            opacity: 1;
+
+            transform:
+                translate(-50%, 0);
+        }
+
+
+        .view-image:hover {
+
+            background: #E63946;
+
+            color: #050507;
+        }
+
+
+        /* =========================================
+           DETAILS
+        ========================================= */
+
+        .certificate-details {
+
+            padding: 10px;
+        }
+
+
+        .cert-id {
+
+            color: #E63946;
+
+            font-size: 11px;
+
+            font-weight: bold;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 14px;
+        }
+
+
+        .certificate-details h2 {
+
+            color: #f1f5f9;
+
+            font-family: Arial, sans-serif;
+
+            font-size:
+                clamp(23px, 3vw, 32px);
+
+            line-height: 1.25;
+
+            margin-bottom: 12px;
+        }
+
+
+        .issuer {
+
+            color: #8B5CF6;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 14px;
+
+            margin-bottom: 28px;
+        }
+
+
+        .issuer span {
+
+            color: #6f7882;
+        }
+
+
+        /* =========================================
+           INFORMATION
+        ========================================= */
+
+        .certificate-info {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 20px;
+
+            padding: 18px 0;
+
+            margin-bottom: 24px;
+
+            border-top:
+                1px solid #20262e;
+
+            border-bottom:
+                1px solid #20262e;
+        }
+
+
+        .info-box {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 5px;
+        }
+
+
+        .info-box span {
+
+            color: #68727d;
+
+            font-size: 10px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1.5px;
+        }
+
+
+        .info-box strong {
+
+            color: #dce1e6;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================================
+           DESCRIPTION
+        ========================================= */
+
+        .description {
+
+            color: #8a949e;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 14px;
+
+            line-height: 1.75;
+
+            margin-bottom: 24px;
+        }
+
+
+        /* =========================================
+           SKILLS
+        ========================================= */
+
+        .skills {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin-bottom: 27px;
+        }
+
+
+        .skills span {
+
+            padding:
+                6px 10px;
+
+            background: #0c1116;
+
+            color: #aeb6bf;
+
+            border:
+                1px solid #222b34;
+
+            border-radius: 3px;
+
+            font-size: 10px;
+
+            transition: 0.25s;
+        }
+
+
+        .skills span:hover {
+
+            color: #8B5CF6;
+
+            border-color: #8B5CF6;
+        }
+
+
+        /* =========================================
+           BUTTONS
+        ========================================= */
+
+        .buttons {
+
+            display: flex;
+
+            gap: 10px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .btn {
+
+            display: inline-block;
+
+            padding:
+                10px 17px;
+
+            border-radius: 4px;
+
+            text-decoration: none;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            transition:
+                0.3s ease;
+        }
+
+
+        .btn-primary {
+
+            background: #E63946;
+
+            color: #050507;
+        }
+
+
+        .btn-primary:hover {
+
+            background: #ff4d5a;
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 0 20px
+                rgba(230,57,70,0.3);
+        }
+
+
+        .btn-secondary {
+
+            color: #aeb7c0;
+
+            border:
+                1px solid #303943;
+        }
+
+
+        .btn-secondary:hover {
+
+            color: #8B5CF6;
+
+            border-color: #8B5CF6;
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        .footer {
+
+            text-align: center;
+
+            padding: 20px;
+
+            color: #505963;
+
+            font-size: 11px;
+
+            letter-spacing: 1px;
+        }
+
+
+        .footer span {
+
+            color: #E63946;
+        }
+
+
+        /* =========================================
+           ANIMATIONS
+        ========================================= */
+
+        @keyframes slideFromLeft {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateX(-100px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateX(0);
+            }
+        }
+
+
+        @keyframes slideFromRight {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateX(100px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateX(0);
+            }
+        }
+
+
+        @keyframes titleAppear {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(-25px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        @keyframes scanLine {
+
+            0% {
+
+                top: -5px;
+            }
+
+            100% {
+
+                top: 100%;
+            }
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 850px) {
+
+            .container {
+
+                width: 92%;
+
+                padding:
+                    65px 0;
+            }
+
+
+            .page-header {
+
+                margin-bottom: 45px;
+            }
+
+
+            .certificate {
+
+                grid-template-columns: 1fr;
+
+                gap: 28px;
+
+                padding: 16px;
+
+                margin-bottom: 35px;
+            }
+
+
+            .certificate-details {
+
+                padding:
+                    5px 7px 12px;
+            }
+
+
+            /* Certificate first */
+            .certificate-preview {
+
+                order: 1;
+            }
+
+
+            /* Details below */
+            .certificate-details {
+
+                order: 2;
+            }
+
+
+            /*
+             * Show view button on mobile
+             * because there is no hover.
+             */
+
+            .view-image {
+
+                opacity: 1;
+
+                transform:
+                    translate(-50%, 0);
+            }
+
+
+            .certificate-info {
+
+                gap: 18px;
+            }
+        }
+
+
+        /* =========================================
+           SMALL MOBILE
+        ========================================= */
+
+        @media (max-width: 480px) {
+
+            .page-header h1 {
+
+                font-size: 38px;
+            }
+
+
+            .page-header p {
+
+                font-size: 13px;
+            }
+
+
+            .certificate-info {
+
+                grid-template-columns: 1fr;
+
+                gap: 14px;
+            }
+
+
+            .buttons {
+
+                flex-direction: column;
+            }
+
+
+            .btn {
+
+                width: 100%;
+
+                text-align: center;
+            }
+
+
+            .certificate-details h2 {
+
+                font-size: 22px;
+            }
+        }
+
+    </style>
